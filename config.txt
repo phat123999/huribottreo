@@ -1,0 +1,3 @@
+[main]
+serverip=caep.aternos.me:44302
+username=huribot
