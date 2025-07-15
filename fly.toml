@@ -1,0 +1,27 @@
+app = "huribot"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  MCC_SERVER = "caep.aternos.me:44302"
+  MCC_USERNAME = "huribot"
+  MCC_PASSWORD = ""
+
+[experimental]
+  auto_rollback = true
+
+[[services]]
+  internal_port = 25565
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = 443
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
